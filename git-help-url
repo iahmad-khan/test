@@ -1,0 +1,42 @@
+Switching remote URLs from SSH to HTTPS
+
+    Open Terminal (for Mac users) or the command prompt (for Windows and Linux users).
+
+    Change the current working directory to your local project.
+
+    List your existing remotes in order to get the name of the remote you want to change.
+
+    git remote -v
+    # origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+    # origin  git@github.com:USERNAME/REPOSITORY.git (push)
+
+    Change your remote's URL from SSH to HTTPS with the remote set-url command.
+
+    git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
+
+    Verify that the remote URL has changed.
+
+    git remote -v
+    # Verify new remote URL
+    # origin  https://github.com/USERNAME/OTHERREPOSITORY.git (fetch)
+    # origin  https://github.com/USERNAME/OTHERREPOSITORY.git (push)
+
+
+
+
+Permanently authenticating with Git repositories,
+
+Run following command to enable credential caching.
+
+$ git config credential.helper store
+$ git push https://github.com/repo.git
+
+Username for 'https://github.com': <USERNAME>
+Password for 'https://USERNAME@github.com': <PASSWORD>
+
+Use should also specify caching expire,
+
+git config --global credential.helper 'cache --timeout 7200'
+
+After enabling credential caching, it will be cached for 7200 seconds (2 hour).
+
