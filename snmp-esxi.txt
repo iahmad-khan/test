@@ -1,0 +1,23 @@
+#ijaz ahmad , 11/14/2014
+#ncp , islamabad
+#ijazahmad722@gmail.com
+#enable snmp v2 , on esxi5.1 
+#
+#set the community string
+esxcli system snmp set --communities ncpro
+#enable the trap
+esxcli system snmp set --targets 127.0.0.1@162/private
+#set custom port
+esxcli system snmp set --port 171
+#enable snmp
+esxcli system snmp set --enable true
+#test
+esxcli system snmp get
+esxcli system snmp test
+
+#final
+#go to vsphere client , select the host , configuration tab , security profile and enable snmpd
+#also check the firewall settings in security profile
+
+#done!
+
