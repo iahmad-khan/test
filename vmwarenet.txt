@@ -1,0 +1,4 @@
+In the networking configuration of an esxi host , if there are multiple
+adaptors in nic teaming section , remove the unused adaptors
+and leave one active adaptor for it to be compliant for isci storage
+connection. fixed
