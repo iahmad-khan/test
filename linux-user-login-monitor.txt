@@ -1,0 +1,23 @@
+#!/bin/bash
+
+log() {
+  line=$(who | cut -d' ' -f1 | sort -u)
+  echo "$(date): " $line  # _NO_ quotes around $line!
+}
+
+while sleep 3600
+do
+  log > user.log
+done &  # do this in the background
+
+
+..............................
+#!/bin/bash
+
+log() {
+  line=$(who | cut -d' ' -f1 | sort -u)
+  echo "$(date): " $line  # _NO_ quotes around $line!
+}
+
+log >> user.log
+
